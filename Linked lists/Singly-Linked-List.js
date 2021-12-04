@@ -7,7 +7,7 @@ class Node{
 }
 ////////////////////////////////////////
 //Class for the whole Singly Linked List
-export class SinglyLinkedList {
+class SinglyLinkedList {
     constructor(){
         this.head =null
         this.size= 0
@@ -97,6 +97,22 @@ deleteValueAt(index){
     this.size--
 }
 ////////////////////////////////////////
+    deleteSelection(data){
+          while(this.head?.data ===data){
+            this.head=this.head.next      
+        }
+        let current= this.head
+        let previous;
+        while(current?.next){
+            previous=current
+            current=current.next  
+            if(current.data===data){
+            previous.next =current.next
+            }               
+                    
+        } 
+    }
+////////////////////////////////////////
     printValues(){
         if(!this.head) return console.log("the linked list is empty")
         let current = this.head
@@ -133,7 +149,7 @@ ClearList(){
 }
 ////////////////////////////////////////
 
-LL1 = new SinglyLinkedList()
+// LL1 = new SinglyLinkedList()
 // LL1.insertFirst(1)
 // LL1.insertFirst(2)
 // LL1.insertFirst(3)
@@ -142,18 +158,20 @@ LL1 = new SinglyLinkedList()
 // LL1.printValues()
 
 LL2 = new SinglyLinkedList()
-LL2.insertFirst(9)
-LL2.insertFirst(4)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
+LL2.insertFirst(6)
 LL2.insertFirst(6)
 LL2.insertAt(3,9921)
-//LL2.deleteValueAt(3)
-LL2.deleteAll()
+LL2.deleteValueAt(3)
+LL2.deleteSelection(6)
 LL2.printValues()
-//LL2.getValueAt(1)
-
-
-
-
+// LL2.getValueAt(1)
 
 
 
