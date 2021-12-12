@@ -54,3 +54,10 @@ class HashTable {
     }
 }
 
+let MyHashTable = new HashTable(15);
+
+MyHashTable._hash("hadouken") //testing the has function
+
+MyHashTable.set("Hadouken","Shoryuken") //adding an element in the hash table
+
+MyHashTable.get("Hadouken") //getting the key's value if it exists , if not return "element not found"  
